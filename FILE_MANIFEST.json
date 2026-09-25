@@ -1,5 +1,5 @@
 {
-  "count": 150,
+  "count": 152,
   "files": [
     ".github/DISCUSSION_WELCOME_README.html",
     ".github/DISCUSSION_WELCOME_README.md",
@@ -71,7 +71,9 @@
     "assets/images/favicon.svg",
     "assets/images/social-preview.svg",
     "assets/js/app.js",
+    "assets/js/book.js",
     "assets/js/payments.js",
+    "book.html",
     "bug_report.html",
     "bug_report.md",
     "community.html",
