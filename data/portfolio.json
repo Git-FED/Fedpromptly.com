@@ -12,7 +12,7 @@
       "status": "Building in public",
       "audience": "Curious people, builders, developers, and supporters",
       "whatYouCanDo": "Read the map, choose a pathway, and start with one small build.",
-      "url": "https://fedpromptly.com",
+      "url": "projects/fedpromptly-ecosystem.html",
       "repository": "TBD",
       "owner": "FedPromptly",
       "lastReviewed": "2026-09-25"
@@ -25,7 +25,7 @@
       "status": "Concept",
       "audience": "Beginners and self-directed learners",
       "whatYouCanDo": "Use the learning direction to shape a starter project.",
-      "url": "#",
+      "url": "projects/fed-edu.html",
       "repository": "TBD",
       "owner": "FedPromptly",
       "lastReviewed": "2026-09-25"
@@ -38,7 +38,7 @@
       "status": "Concept",
       "audience": "Experimenters and early collaborators",
       "whatYouCanDo": "Document an experiment, share what broke, or propose a small test.",
-      "url": "#",
+      "url": "projects/fedpromptly-labs.html",
       "repository": "TBD",
       "owner": "FedPromptly",
       "lastReviewed": "2026-09-25"
@@ -51,7 +51,7 @@
       "status": "Planned",
       "audience": "People who know what they want to make but need a starting point",
       "whatYouCanDo": "Suggest a template or turn a working project into a documented starter.",
-      "url": "#",
+      "url": "projects/builder-templates.html",
       "repository": "TBD",
       "owner": "FedPromptly",
       "lastReviewed": "2026-09-25"
@@ -64,7 +64,7 @@
       "status": "Building",
       "audience": "Builders looking for examples and collaborators",
       "whatYouCanDo": "Submit a project with its current status and what you learned.",
-      "url": "#",
+      "url": "projects/builder-showcase.html",
       "repository": "TBD",
       "owner": "FedPromptly",
       "lastReviewed": "2026-09-25"
@@ -77,7 +77,7 @@
       "status": "Future concept",
       "audience": "Researchers, architects, and long-term collaborators",
       "whatYouCanDo": "Treat this as a direction for questions, not a shipped product.",
-      "url": "#",
+      "url": "projects/fedos-concepts.html",
       "repository": "TBD",
       "owner": "FedPromptly",
       "lastReviewed": "2026-09-25"

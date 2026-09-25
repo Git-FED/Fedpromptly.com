@@ -11,5 +11,3 @@
   const grid=document.querySelector('#project-grid');
   fetch(location.pathname.endsWith('/projects.html') || location.pathname.endsWith('/labs.html') ? 'data/portfolio.json' : 'data/portfolio.json').then(r=>r.json()).then(data=>{if(!grid)return;grid.innerHTML=data.projects.map(p=>`<article class="panel project-card" data-tilt><div class="eyebrow">${p.type}</div><h3>${p.name}</h3><p>${p.description}</p><p class="muted"><strong>Status:</strong> ${p.status}<br><strong>For:</strong> ${p.audience}</p><p><strong>Try this:</strong> ${p.whatYouCanDo}</p><a href="${p.url}" aria-label="Open ${p.name}">Explore project →</a></article>`).join('')}).catch(()=>{if(grid)grid.innerHTML='<p class="muted">Project catalog is temporarily unavailable. The ecosystem is still being built.</p>'});
 })();
-
-  const menuButton=document.querySelector('.menu-toggle');const menu=document.querySelector('#site-menu');menuButton?.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});

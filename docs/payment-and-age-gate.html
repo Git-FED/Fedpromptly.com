@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Payment and Age-Gate Implementation Note — FedPromptly documentation."><link rel="icon" href="../assets/images/favicon.svg"><link rel="stylesheet" href="../assets/css/main.css"><title>Payment and Age-Gate Implementation Note — FedPromptly</title></head><body><nav class="site-nav"><a class="brand" href="../index.html">FEDPROMPTLY</a><a class="menu-toggle" href="../menu.html">Menu</a><div id="site-menu" class="nav-links"><a href="../index.html">Home</a><a href="../about.html">Mission</a><a href="../projects.html">Projects</a><a href="../labs.html">Labs</a><a href="../docs.html">Docs</a><a href="../roadmap.html">Roadmap</a><a href="../community.html">Community</a><a href="../support.html">Support</a></div></nav><main><section class="page-hero wrap"><div class="eyebrow">FedPromptly / rendered document</div><h1>Payment and Age-Gate Implementation Note</h1><p class="lede">A readable HTML view of this FedPromptly source document.</p></section><article class="wrap doc-article panel"><h1>Payment and Age-Gate Implementation Note</h1>
+<h2>What is implemented</h2>
+<p>The promotional page contains:</p>
+<ul>
+<li>A date-of-birth input.</li>
+<li>A client-side check for an age of 18 or older.</li>
+<li>A <code>localStorage</code> flag used to avoid repeated prompts on the same browser.</li>
+<li>PayPal subscription markup and Stripe Buy Button markup inside the gated region.</li>
+<li>Ko-fi and Buy Me a Coffee support links outside the subscription embed.</li>
+</ul>
+<h2>What this does not prove</h2>
+<p>This does not prove age, identity, location, eligibility, consent, tax status, consumer-protection compliance, or compliance with a payment provider's terms. A front-end flag can be altered by the visitor and must not be treated as a security boundary.</p>
+<h2>Production checklist</h2>
+<ul>
+<li>Confirm the appropriate age threshold by jurisdiction and product.</li>
+<li>Confirm whether the product actually requires an age restriction.</li>
+<li>Confirm provider rules for subscription buttons, recurring billing, disclosures, receipts, cancellation, refunds, and chargebacks.</li>
+<li>Do not store date of birth unless there is a documented lawful reason and secure data design.</li>
+<li>Decide whether payment should be handled on a provider-hosted page instead of embedded.</li>
+<li>Add terms, privacy, refund, and contact links before live billing.</li>
+<li>Use a server-side entitlement system for paid access; never trust <code>localStorage</code>.</li>
+<li>Test rejected, canceled, successful, refunded, and chargeback flows.</li>
+<li>Confirm whether the displayed public keys and plan IDs are still active and intended for this project.</li>
+</ul></article></main><footer class="site-footer"><div class="wrap footer-grid"><div><a class="brand" href="../index.html">FEDPROMPTLY</a><p>A place where people turn ideas into software.</p><p class="muted">Built in public. Designed for the next small step.</p></div><div><b>Contact</b><div class="footer-links"><a href="mailto:contact@fedpromptly.com">contact@fedpromptly.com</a><a href="mailto:support@fedpromptly.com">support@fedpromptly.com</a></div></div><div><b>Explore</b><div class="footer-links"><a href="../docs.html">Docs hub</a><a href="../projects.html">Projects</a><a href="../community.html">Community</a><a href="../support.html">Support</a></div></div></div><div class="wrap footer-bottom"><span>© 2026 FedPromptly</span><span><a href="../SECURITY.html">Security</a> · <a href="../CODE_OF_CONDUCT.html">Code of Conduct</a> · <a href="../LICENSE.html">License</a></span></div></footer><script src="../assets/js/app.js"></script></body></html>
