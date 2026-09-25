@@ -62,7 +62,7 @@ Do not open the files with `file://` when testing the project list: `app.js` fet
 
 ## Payment boundary
 
-The repository includes the requested PayPal and Stripe subscription markup behind an adult age-verification experience. The gate is a front-end interaction, **not** proof of legal compliance, identity verification, or payment-provider approval. Do not treat it as sufficient for regulated, age-restricted, or jurisdiction-specific use without professional review.
+The repository includes dedicated PayPal and Stripe provider pages with clear integration status and provider-owned checkout components. Verify product, pricing, tax, legal, and provider settings before publishing live billing.
 
 ## Content ownership
 

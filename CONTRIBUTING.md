@@ -16,7 +16,7 @@ Use status labels honestly. A concept is not a product. A project is not an endo
 
 ## Payment and security
 
-Never commit secrets, private keys, card data, or production credentials. Do not modify provider IDs, payment scripts, or age-gate behavior casually. Follow `docs/payment-and-age-gate.md` and request review.
+Never commit secrets, private keys, card data, or production credentials. Do not modify provider IDs, payment scripts, casually. Request review for provider IDs and payment scripts.
 
 ## Review standard
 

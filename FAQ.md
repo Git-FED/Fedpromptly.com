@@ -30,7 +30,7 @@ You can share a project, help another builder, contribute documentation, or use 
 
 ## Why is there an age gate around subscription embeds?
 
-The current front-end experience asks visitors to confirm they are 18 or older before displaying the requested subscription embeds. This is only a user-interface gate, not proof of identity, legal eligibility, or compliance. Review `docs/payment-and-age-gate.md` before enabling live billing.
+Subscription provider pages are directly accessible. The static site does not perform identity or legal eligibility verification; review applicable requirements and provider settings before enabling live billing.
 
 ## How do I report a security issue?
 
