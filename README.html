@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="FedPromptly Promotional GitHub Site — FedPromptly documentation."><link rel="icon" href="assets/images/favicon.svg"><link rel="stylesheet" href="assets/css/main.css"><title>FedPromptly Promotional GitHub Site — FedPromptly</title></head><body><nav class="site-nav"><a class="brand" href="index.html">FEDPROMPTLY</a><button class="menu-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button><div id="site-menu" class="nav-links"><a href="index.html">Home</a><a href="about.html">Mission</a><a href="projects.html">Projects</a><a href="labs.html">Labs</a><a href="docs.html">Docs</a><a href="roadmap.html">Roadmap</a><a href="community.html">Community</a><a href="support.html">Support</a></div></nav><main><section class="page-hero wrap"><div class="eyebrow">FedPromptly / rendered document</div><h1>FedPromptly Promotional GitHub Site</h1><p class="lede">A readable HTML view of this FedPromptly source document.</p></section><article class="wrap doc-article panel"><h1>FedPromptly Promotional GitHub Site</h1>
+<p>FedPromptly is <strong>a place where people turn ideas into software</strong>. This repository is the promotional front door for that ecosystem: it explains the mission, points visitors toward useful next steps, showcases projects, and gives supporters a transparent way to help.</p>
+<p>This is deliberately a static-first site. It can run on GitHub Pages with no build server, no database, and no framework. That keeps the public surface fast, inspectable, cheap to host, and easy for contributors to understand.</p>
+<h2>What this repository contains</h2>
+<pre><code>.
+├── index.html                  # Promotional landing page
+├── 404.html                    # Branded missing-page experience
+├── assets/
+│   ├── css/main.css            # Visual system and responsive layout
+│   ├── js/app.js               # Project rendering, age gate, card interactions
+│   ├── js/payments.js          # Payment integration boundary notes
+│   └── images/                 # Social preview, favicon, editable SVG sources
+├── components/                 # Reusable HTML fragments and payment boundary
+├── data/portfolio.json         # Projects, links, contact metadata
+├── .github/                    # Actions, funding, issue forms, contribution templates
+├── docs/                       # Product, content, launch, accessibility, and trust guidance
+├── prompts/                    # Reusable AI prompts for copy, design, engineering, and launch
+├── operations/                 # Runbooks for launch, support, incidents, and content updates
+└── legal/                      # Review-required policy planning materials</code></pre>
+<h2>Local development</h2>
+<h3>Option A: Python</h3>
+<pre><code>python3 -m http.server 8000
+# Open http://localhost:8000</code></pre>
+<h3>Option B: Node</h3>
+<pre><code>npx serve .</code></pre>
+<p>Do not open the files with <code>file://</code> when testing the project list: <code>app.js</code> fetches <code>data/portfolio.json</code>, and browsers block that request from some local file contexts.</p>
+<h2>Content workflow</h2>
+<ol>
+<li><strong>Start with the audience.</strong> Decide whether a change is for a curious beginner, active builder, developer, supporter, or partner.</li>
+<li><strong>Edit data before markup.</strong> Add projects and verified links to <code>data/portfolio.json</code>; let the page render them.</li>
+<li><strong>Use the voice guide.</strong> Keep copy direct, curious, warm, and honest. Avoid inflated scale claims.</li>
+<li><strong>Label the state of work.</strong> Use <code>Concept</code>, <code>Experiment</code>, <code>Building</code>, <code>Released</code>, or <code>Archived</code> rather than implying every idea is a live product.</li>
+<li><strong>Validate locally.</strong> Check the landing page, project cards, footer mail links, support links, age gate, keyboard focus, mobile layout, and 404 page.</li>
+<li><strong>Open a focused pull request.</strong> Explain the visitor problem, the change, and how it was tested.</li>
+</ol>
+<h2>Before publishing</h2>
+<ul>
+<li>Replace every <code>TBD</code> and placeholder URL.</li>
+<li>Confirm the GitHub organization, Sponsors handle, Ko-fi handle, Patreon handle, Discord invite, and custom domain.</li>
+<li>Confirm that every project link resolves and that every project owner has approved publication.</li>
+<li>Review payment embeds with the payment providers and qualified counsel.</li>
+<li>Confirm age, geography, tax, consumer-protection, cancellation, refund, privacy, and accessibility requirements.</li>
+<li>Test the site on a narrow mobile viewport and with keyboard-only navigation.</li>
+<li>Verify that support emails are monitored and that someone owns launch-day incident response.</li>
+</ul>
+<h2>Payment boundary</h2>
+<p>The repository includes the requested PayPal and Stripe subscription markup behind an adult age-verification experience. The gate is a front-end interaction, <strong>not</strong> proof of legal compliance, identity verification, or payment-provider approval. Do not treat it as sufficient for regulated, age-restricted, or jurisdiction-specific use without professional review.</p>
+<h2>Content ownership</h2>
+<p>The site should have a named owner for each of these areas:</p>
+<p>| Area | Owner | Review cadence |</p>
+<p>|---|---|---|</p>
+<p>| Homepage narrative | TBD | Before every launch |</p>
+<p>| Project catalog | TBD | Monthly |</p>
+<p>| Payment/support links | TBD | Monthly and after provider changes |</p>
+<p>| Security instructions | TBD | Quarterly and after incidents |</p>
+<p>| Legal pages | Qualified reviewer TBD | Before publication and on material change |</p>
+<h2>Design direction</h2>
+<ul>
+<li>Background: deep obsidian <code>#07070a</code></li>
+<li>Primary accent: neon cyan <code>#00f0ff</code></li>
+<li>Secondary accent: violet <code>#7000ff</code></li>
+<li>Typography: Plus Jakarta Sans for headings, Inter for body copy</li>
+<li>Layout: asymmetrical hero, glass panels, generous negative space, progressive disclosure</li>
+<li>Motion: subtle reveal and hover movement; never make essential information depend on animation</li>
+</ul>
+<h2>Contribution promise</h2>
+<p>A contribution is successful when it makes the next step clearer for a visitor or makes the site easier to maintain for another builder. Visual polish matters, but clarity, truthfulness, and accessibility matter more.</p></article></main><footer class="site-footer"><div class="wrap footer-grid"><div><a class="brand" href="index.html">FEDPROMPTLY</a><p>A place where people turn ideas into software.</p><p class="muted">Built in public. Designed for the next small step.</p></div><div><b>Contact</b><div class="footer-links"><a href="mailto:contact@fedpromptly.com">contact@fedpromptly.com</a><a href="mailto:support@fedpromptly.com">support@fedpromptly.com</a></div></div><div><b>Explore</b><div class="footer-links"><a href="docs.html">Docs hub</a><a href="projects.html">Projects</a><a href="community.html">Community</a><a href="support.html">Support</a></div></div></div><div class="wrap footer-bottom"><span>© 2026 FedPromptly</span><span><a href="SECURITY.html">Security</a> · <a href="CODE_OF_CONDUCT.html">Code of Conduct</a> · <a href="LICENSE.html">License</a></span></div></footer><script src="assets/js/app.js"></script></body></html>
