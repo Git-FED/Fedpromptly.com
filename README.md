@@ -1,90 +1,85 @@
-# FedPromptly Promotional GitHub Site
+<img width="807" height="450" alt="1780084581" src="https://github.com/user-attachments/assets/df2d911b-3b04-4bad-a9f2-b436779f89d2" />
 
-FedPromptly is **a place where people turn ideas into software**. This repository is the promotional front door for that ecosystem: it explains the mission, points visitors toward useful next steps, showcases projects, and gives supporters a transparent way to help.
+# web2apk — turn a website into an installable Android APK 
 
-This is deliberately a static-first site. It can run on GitHub Pages with no build server, no database, and no framework. That keeps the public surface fast, inspectable, cheap to host, and easy for contributors to understand.
+<a href='https://ko-fi.com/YOUR_USERNAME' target='_blank'>
+    <img height='36' style='border:0px;height:36px;' src='https://ko-fi.com/img/githubbutton_sm.svg' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+</a>
 
-## What this repository contains
+This repo wraps a website in a native Android shell (using [Capacitor](https://capacitorjs.com))
+and builds it into APKs automatically with GitHub Actions — no local Android Studio needed.
 
-```text
-.
-├── index.html                  # Promotional landing page
-├── 404.html                    # Branded missing-page experience
-├── assets/
-│   ├── css/main.css            # Visual system and responsive layout
-│   ├── js/app.js               # Project rendering, age gate, card interactions
-│   ├── js/payments.js          # Payment integration boundary notes
-│   └── images/                 # Social preview, favicon, editable SVG sources
-├── components/                 # Reusable HTML fragments and payment boundary
-├── data/portfolio.json         # Projects, links, contact metadata
-├── .github/                    # Actions, funding, issue forms, contribution templates
-├── docs/                       # Product, content, launch, accessibility, and trust guidance
-├── prompts/                    # Reusable AI prompts for copy, design, engineering, and launch
-├── operations/                 # Runbooks for launch, support, incidents, and content updates
-└── legal/                      # Review-required policy planning materials
+Every build produces **5 APKs**, so it works on every Android device/architecture:
+- `app-arm64-v8a` — modern 64-bit phones (most phones since ~2019)
+- `app-armeabi-v7a` — older 32-bit phones
+- `app-x86` / `app-x86_64` — emulators / some tablets & Chromebooks
+- `app-universal` — works on all of the above, just a bit larger
+
+## 1. Point it at your website
+
+Open `capacitor.config.json` and either:
+
+**A) Load your live website (simplest)** — add a `server.url`:
+```json
+{
+  "appId": "com.example.mywebapp",
+  "appName": "My Web App",
+  "webDir": "www",
+  "server": {
+    "url": "https://your-website.com",
+    "androidScheme": "https"
+  }
+}
 ```
 
-## Local development
+**B) Bundle static files offline** — delete everything in `www/` and put your built
+website's files there instead (the `index.html`, `css/`, `js/`, etc.), and remove
+`server.url` if present. The app will work without an internet connection.
 
-### Option A: Python
+Also update `appId` (a unique reverse-domain ID, e.g. `com.yourcompany.appname`) and
+`appName` (the name shown under the icon).
 
-```bash
-python3 -m http.server 8000
-# Open http://localhost:8000
+## 2. Push to GitHub
+
+Create a repo and push this whole folder to it. The workflow at
+`.github/workflows/build.yml` runs automatically on every push to `main`.
+
+## 3. Get your APK
+
+Go to your repo's **Actions** tab → click the latest run → scroll to **Artifacts** →
+download `app-debug-apks` (easiest to just install and test) or `app-release-apks`.
+Unzip it, pick the APK matching the device (or the universal one), transfer it to
+your phone, and install it (you'll need to allow "install from unknown sources" once).
+
+You can also trigger a build manually anytime from the Actions tab → **Build APK (all
+devices)** → **Run workflow**.
+
+## Signing for production (Play Store)
+
+The release APKs in this workflow are signed with the Android **debug key**, so they
+install fine for testing but Google Play will reject them. To publish for real:
+
+1. Generate a keystore: `keytool -genkey -v -keystore release.keystore -alias my-key -keyalg RSA -keysize 2048 -validity 10000`
+2. Add it as a GitHub Actions secret (base64-encode the file) along with the store/key passwords.
+3. In `android/app/build.gradle`, add a real `signingConfigs.release` block using those secrets and reference it from `buildTypes.release.signingConfig` instead of `signingConfigs.debug`.
+4. Update `build.yml` to decode the keystore secret into a file before the release build step.
+
+Happy to wire this up for you if/when you have a keystore ready.
+
+## App icon & splash screen
+
+Capacitor uses default placeholder icons. To customize:
 ```
-
-### Option B: Node
-
-```bash
-npx serve .
+npm install @capacitor/assets --save-dev
+npx capacitor-assets generate
 ```
+(after placing your `icon.png` / `splash.png` source images per the
+[@capacitor/assets docs](https://github.com/ionic-team/capacitor-assets)).
 
-Do not open the files with `file://` when testing the project list: `app.js` fetches `data/portfolio.json`, and browsers block that request from some local file contexts.
-
-## Content workflow
-
-1. **Start with the audience.** Decide whether a change is for a curious beginner, active builder, developer, supporter, or partner.
-2. **Edit data before markup.** Add projects and verified links to `data/portfolio.json`; let the page render them.
-3. **Use the voice guide.** Keep copy direct, curious, warm, and honest. Avoid inflated scale claims.
-4. **Label the state of work.** Use `Concept`, `Experiment`, `Building`, `Released`, or `Archived` rather than implying every idea is a live product.
-5. **Validate locally.** Check the landing page, project cards, footer mail links, support links, age gate, keyboard focus, mobile layout, and 404 page.
-6. **Open a focused pull request.** Explain the visitor problem, the change, and how it was tested.
-
-## Before publishing
-
-- Replace every `TBD` and placeholder URL.
-- Confirm the GitHub organization, Sponsors handle, Ko-fi handle, Patreon handle, Discord invite, and custom domain.
-- Confirm that every project link resolves and that every project owner has approved publication.
-- Review payment embeds with the payment providers and qualified counsel.
-- Confirm age, geography, tax, consumer-protection, cancellation, refund, privacy, and accessibility requirements.
-- Test the site on a narrow mobile viewport and with keyboard-only navigation.
-- Verify that support emails are monitored and that someone owns launch-day incident response.
-
-## Payment boundary
-
-The repository includes dedicated PayPal and Stripe provider pages with clear integration status and provider-owned checkout components. Verify product, pricing, tax, legal, and provider settings before publishing live billing.
-
-## Content ownership
-
-The site should have a named owner for each of these areas:
-
-| Area | Owner | Review cadence |
-|---|---|---|
-| Homepage narrative | TBD | Before every launch |
-| Project catalog | TBD | Monthly |
-| Payment/support links | TBD | Monthly and after provider changes |
-| Security instructions | TBD | Quarterly and after incidents |
-| Legal pages | Qualified reviewer TBD | Before publication and on material change |
-
-## Design direction
-
-- Background: deep obsidian `#07070a`
-- Primary accent: neon cyan `#00f0ff`
-- Secondary accent: violet `#7000ff`
-- Typography: Plus Jakarta Sans for headings, Inter for body copy
-- Layout: asymmetrical hero, glass panels, generous negative space, progressive disclosure
-- Motion: subtle reveal and hover movement; never make essential information depend on animation
-
-## Contribution promise
-
-A contribution is successful when it makes the next step clearer for a visitor or makes the site easier to maintain for another builder. Visual polish matters, but clarity, truthfulness, and accessibility matter more.
+## Project structure
+```
+capacitor.config.json     # points the app at your website (or bundled files)
+www/                      # bundled web files (only used if server.url is not set)
+android/                  # native Android project (generated, safe to regenerate via `npx cap add android`)
+.github/workflows/build.yml   # CI: builds APKs for every architecture on every push
+```
