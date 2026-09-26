@@ -29,13 +29,13 @@
     nav.appendChild(theme);
   }
   const saved=localStorage.getItem('fedpromptly_theme');
-  if(saved==='dark') root.dataset.theme='dark';
+  root.dataset.theme=saved==='light'?'light':'dark';
   document.addEventListener('click',e=>{
     const toggle=e.target.closest('[data-theme-toggle]');
     if(toggle){
       e.preventDefault();
       const next=root.dataset.theme==='dark'?'light':'dark';
-      if(next==='dark') root.dataset.theme='dark'; else delete root.dataset.theme;
+      root.dataset.theme=next;
       localStorage.setItem('fedpromptly_theme',next);
     }
   });
