@@ -1,5 +1,5 @@
 {
-  "count": 152,
+  "count": 153,
   "files": [
     ".github/DISCUSSION_WELCOME_README.html",
     ".github/DISCUSSION_WELCOME_README.md",
@@ -146,6 +146,7 @@
     "support/paypal.html",
     "support/provider-status.html",
     "support/stripe.html",
+    "support/subscription-options.html",
     "theme.html",
     "todo.html",
     "todo.md",

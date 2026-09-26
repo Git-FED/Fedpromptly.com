@@ -1,67 +1,149 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="FedPromptly Promotional GitHub Site — FedPromptly documentation."><link rel="icon" href="assets/images/favicon.svg"><link rel="stylesheet" href="assets/css/main.css"><title>FedPromptly Promotional GitHub Site — FedPromptly</title></head><body><nav class="site-nav"><a class="brand" href="index.html">FEDPROMPTLY</a><a class="menu-toggle" href="menu.html">Menu</a><div id="site-menu" class="nav-links"><a href="index.html">Home</a><a href="about.html">Mission</a><a href="projects.html">Projects</a><a href="labs.html">Labs</a><a href="docs.html">Docs</a><a href="roadmap.html">Roadmap</a><a href="community.html">Community</a><a href="support.html">Support</a></div></nav><main><section class="page-hero wrap"><div class="eyebrow">FedPromptly / rendered document</div><h1>FedPromptly Promotional GitHub Site</h1><p class="lede">A readable HTML view of this FedPromptly source document.</p></section><article class="wrap doc-article panel"><h1>FedPromptly Promotional GitHub Site</h1>
-<p>FedPromptly is <strong>a place where people turn ideas into software</strong>. This repository is the promotional front door for that ecosystem: it explains the mission, points visitors toward useful next steps, showcases projects, and gives supporters a transparent way to help.</p>
-<p>This is deliberately a static-first site. It can run on GitHub Pages with no build server, no database, and no framework. That keeps the public surface fast, inspectable, cheap to host, and easy for contributors to understand.</p>
-<h2>What this repository contains</h2>
-<pre><code>.
-├── index.html                  # Promotional landing page
-├── 404.html                    # Branded missing-page experience
-├── assets/
-│   ├── css/main.css            # Visual system and responsive layout
-│   ├── js/app.js               # Project rendering, age gate, card interactions
-│   ├── js/payments.js          # Payment integration boundary notes
-│   └── images/                 # Social preview, favicon, editable SVG sources
-├── components/                 # Reusable HTML fragments and payment boundary
-├── data/portfolio.json         # Projects, links, contact metadata
-├── .github/                    # Actions, funding, issue forms, contribution templates
-├── docs/                       # Product, content, launch, accessibility, and trust guidance
-├── prompts/                    # Reusable AI prompts for copy, design, engineering, and launch
-├── operations/                 # Runbooks for launch, support, incidents, and content updates
-└── legal/                      # Review-required policy planning materials</code></pre>
-<h2>Local development</h2>
-<h3>Option A: Python</h3>
-<pre><code>python3 -m http.server 8000
-# Open http://localhost:8000</code></pre>
-<h3>Option B: Node</h3>
-<pre><code>npx serve .</code></pre>
-<p>Do not open the files with <code>file://</code> when testing the project list: <code>app.js</code> fetches <code>data/portfolio.json</code>, and browsers block that request from some local file contexts.</p>
-<h2>Content workflow</h2>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="FedPromptly — a static-first builder ecosystem for turning ideas into software."><link rel="icon" href="assets/images/favicon.svg"><link rel="stylesheet" href="assets/css/main.css"><title>FedPromptly — README</title><style>.readme-hero{background:linear-gradient(135deg,#071018,#11363f 55%,#3155d9);color:#fff;border-radius:26px;padding:clamp(28px,6vw,70px);margin-bottom:22px}.readme-hero h1{margin:.3rem 0 1rem;font-size:clamp(3rem,7vw,6.5rem);letter-spacing:-.08em}.readme-hero p{max-width:680px;color:#c2d5d8;font-size:1.1rem}.readme-article h1:first-child{display:none}.readme-article h2{margin-top:2.8rem}.readme-article h3{margin-top:2rem}.readme-article table{width:100%;border-collapse:collapse;margin:1.3rem 0}.readme-article th,.readme-article td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--line)}.readme-article th{font:500 .7rem 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em}.readme-article code{font-size:.88em}.readme-article pre{overflow:auto}.readme-article blockquote{border-left:4px solid var(--teal);padding-left:18px;color:var(--muted)}.readme-article a{font-weight:700}</style></head><body><nav class="site-nav"><a class="brand" href="index.html">FEDPROMPTLY</a><a class="menu-toggle" href="menu.html">Menu</a><div class="nav-links"><a href="index.html">Home</a><a href="about.html">Mission</a><a href="projects.html">Projects</a><a href="labs.html">Labs</a><a href="docs.html">Docs</a><a href="roadmap.html">Roadmap</a><a href="community.html">Community</a><a href="support.html">Support</a></div></nav><main><section class="wrap page-hero"><div class="eyebrow">FedPromptly / project guide</div><div class="readme-hero"><div class="eyebrow" style="color:var(--teal)">Static-first builder ecosystem</div><h1>Turn ideas into software.</h1><p>The project README, redesigned as a useful starting point for visitors, contributors, and future maintainers.</p></div></section><article class="wrap doc-article panel readme-article"><h1>FedPromptly</h1>
+<blockquote>
+<p><strong>A place where people turn ideas into software.</strong></p>
+<p>A static-first builder ecosystem for learning, making, testing, deploying, and sharing useful work.</p>
+</blockquote>
+<p><a href="index.html">Open the site</a> · <a href="projects.html">Explore projects</a> · <a href="book.html">Read the book</a> · <a href="support.html">Support the work</a></p>
+<hr />
+<h2>What this is</h2>
+<p>FedPromptly is the public front door for a builder ecosystem. It is designed for people who have an idea, a question, a rough prototype, or a project that needs a clearer next step.</p>
+<p>The site does four jobs well:</p>
+<ul>
+<li><strong>Orient:</strong> explain what FedPromptly is and where to begin.</li>
+<li><strong>Show:</strong> make projects, experiments, labs, and examples easy to explore.</li>
+<li><strong>Teach:</strong> provide practical docs, prompts, checklists, and the interactive book <em>The Small Build</em>.</li>
+<li><strong>Invite:</strong> make it clear how to contribute, submit a project, or support the work.</li>
+</ul>
+<p>This is not a framework demo or a placeholder landing page. It is a complete, static-first site that can be opened, inspected, edited, and deployed without a build server.</p>
+<h2>Start here</h2>
+<table>
+<thead>
+<tr>
+<th>If you want to…</th>
+<th>Start with…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Understand the mission</td>
+<td><a href="about.html">Mission</a></td>
+</tr>
+<tr>
+<td>Browse the ecosystem</td>
+<td><a href="projects.html">Projects</a></td>
+</tr>
+<tr>
+<td>Learn how to build a first slice</td>
+<td><a href="book.html">The Small Build</a></td>
+</tr>
+<tr>
+<td>Find practical guidance</td>
+<td><a href="docs.html">Docs</a></td>
+</tr>
+<tr>
+<td>Submit something you made</td>
+<td><a href="submit-project.html">Submit a project</a></td>
+</tr>
+<tr>
+<td>Choose a support method</td>
+<td><a href="support/subscription-options.html">Support options</a></td>
+</tr>
+<tr>
+<td>Check provider integrations</td>
+<td><a href="support/provider-status.html">Provider status</a></td>
+</tr>
+</tbody>
+</table>
+<h2>The experience</h2>
+<h3>A clear public surface</h3>
+<p>The homepage introduces the ecosystem quickly, then surfaces the six support paths near the top of the page. The navigation stays intentionally small: Mission, Projects, Labs, Docs, Roadmap, Community, and Support.</p>
+<h3>A real project family</h3>
+<p>Project cards lead to dedicated local HTML pages rather than dead links or raw source files. Each destination has context, a useful next step, and a return path.</p>
+<h3>An interactive field guide</h3>
+<p><a href="book.html"><em>The Small Build</em></a> is a complete browser-based book with:</p>
+<ul>
+<li>chapter completion tracking saved in the browser;</li>
+<li>a live reading-progress meter;</li>
+<li>expandable reflection prompts;</li>
+<li>a saved four-part workbook;</li>
+<li>a downloadable personal notes file; and</li>
+<li>responsive, print-friendly styling.</li>
+</ul>
+<h3>A visible support menu</h3>
+<p>The <a href="support.html">Support hub</a> and <a href="support/subscription-options.html">subscription chooser</a> keep provider choices separate and understandable:</p>
+<ul>
+<li><a href="support/paypal.html">PayPal FedPromptly</a></li>
+<li><a href="support/stripe.html">Stripe FedPromptly</a></li>
+<li><a href="support/ko-fi.html">Ko-fi</a></li>
+<li><a href="support/github-sponsors.html">GitHub Sponsors</a></li>
+<li><a href="support/buy-me-a-book.html">Buy Me a Book</a></li>
+<li><a href="support/nowpayments.html">NOWPayments</a></li>
+</ul>
+<p>Each option leads to its own local HTML destination. Provider-owned checkout scripts and embeds remain inside the relevant provider page so one blocked widget does not break the entire support menu.</p>
+<h2>Run it locally</h2>
+<p>The site is static. Use a local HTTP server so JSON, scripts, and relative links behave like they will on GitHub Pages.</p>
+<h3>Python</h3>
+<pre><code class="language-bash">cd fedpromptly-promo
+python3 -m http.server 8000 --bind 0.0.0.0
+</code></pre>
+<p>Open <a href="http://localhost:8000">http://localhost:8000</a>.</p>
+<h3>Node</h3>
+<pre><code class="language-bash">npx serve .
+</code></pre>
+<p>Do not use <code>file://</code> for normal testing. Browser security rules can block local data requests and make a healthy page look broken.</p>
+<h2>Repository map</h2>
+<pre><code class="language-text">.
+├── index.html                    Homepage and visible support cards
+├── book.html                     Interactive book and workbook
+├── support.html                  Support hub
+├── support/                      Provider pages and payment chooser
+├── projects/                     Dedicated project destinations
+├── docs/                         Rendered guides and design documentation
+├── operations/                   Launch, support, content, and incident runbooks
+├── prompts/                      Reusable copy, design, engineering, and launch prompts
+├── data/portfolio.json           Project catalog data
+├── assets/css/main.css           Shared visual system
+├── assets/js/app.js              Shared progressive enhancement
+├── assets/js/book.js             Book progress, notes, and workbook download
+├── components/                   Reusable site components
+├── .github/                      Contribution and funding files
+└── FILE_MANIFEST.json            Package inventory
+</code></pre>
+<h2>Editing workflow</h2>
 <ol>
-<li><strong>Start with the audience.</strong> Decide whether a change is for a curious beginner, active builder, developer, supporter, or partner.</li>
-<li><strong>Edit data before markup.</strong> Add projects and verified links to <code>data/portfolio.json</code>; let the page render them.</li>
-<li><strong>Use the voice guide.</strong> Keep copy direct, curious, warm, and honest. Avoid inflated scale claims.</li>
-<li><strong>Label the state of work.</strong> Use <code>Concept</code>, <code>Experiment</code>, <code>Building</code>, <code>Released</code>, or <code>Archived</code> rather than implying every idea is a live product.</li>
-<li><strong>Validate locally.</strong> Check the landing page, project cards, footer mail links, support links, age gate, keyboard focus, mobile layout, and 404 page.</li>
-<li><strong>Open a focused pull request.</strong> Explain the visitor problem, the change, and how it was tested.</li>
+<li><strong>Choose the visitor.</strong> Decide whether the change serves a beginner, builder, contributor, supporter, or partner.</li>
+<li><strong>Choose the destination.</strong> Put user-facing information on an HTML page, not in a raw Markdown, JSON, or text link.</li>
+<li><strong>Keep the path concrete.</strong> Every prominent card should lead to a real local destination with a clear next action.</li>
+<li><strong>Update data before duplication.</strong> Add project metadata to <code>data/portfolio.json</code> when the content belongs in the project catalog.</li>
+<li><strong>Label reality accurately.</strong> Use language such as <code>Concept</code>, <code>Experiment</code>, <code>Building</code>, <code>Released</code>, or <code>Archived</code>.</li>
+<li><strong>Test the whole path.</strong> Check the page, its links, its empty or fallback state, keyboard focus, mobile layout, and return navigation.</li>
+<li><strong>Make the change easy to review.</strong> Explain the visitor problem, the implementation, and what you tested.</li>
 </ol>
 <h2>Before publishing</h2>
 <ul>
-<li>Replace every <code>TBD</code> and placeholder URL.</li>
-<li>Confirm the GitHub organization, Sponsors handle, Ko-fi handle, Patreon handle, Discord invite, and custom domain.</li>
-<li>Confirm that every project link resolves and that every project owner has approved publication.</li>
-<li>Review payment embeds with the payment providers and qualified counsel.</li>
-<li>Confirm age, geography, tax, consumer-protection, cancellation, refund, privacy, and accessibility requirements.</li>
-<li>Test the site on a narrow mobile viewport and with keyboard-only navigation.</li>
-<li>Verify that support emails are monitored and that someone owns launch-day incident response.</li>
+<li>Replace remaining placeholder ownership fields and confirm project permissions.</li>
+<li>Confirm the GitHub organization, sponsor identity, support handles, and contact inboxes.</li>
+<li>Verify every payment product, plan, price, tax setting, cancellation path, and provider account in the provider dashboards.</li>
+<li>Review payment, consumer-protection, privacy, refund, accessibility, and regional requirements before enabling live billing.</li>
+<li>Test the homepage and provider chooser in a clean browser and on a narrow mobile viewport.</li>
+<li>Test keyboard navigation, visible focus, reduced motion, contrast, and blocked third-party script fallbacks.</li>
+<li>Confirm the launch owner knows how to handle support questions and provider incidents.</li>
 </ul>
-<h2>Payment boundary</h2>
-<p>The repository includes dedicated PayPal and Stripe provider pages with clear integration status and provider-owned checkout components. Verify product, pricing, tax, legal, and provider settings before publishing live billing.</p>
-<h2>Content ownership</h2>
-<p>The site should have a named owner for each of these areas:</p>
-<p>| Area | Owner | Review cadence |</p>
-<p>|---|---|---|</p>
-<p>| Homepage narrative | TBD | Before every launch |</p>
-<p>| Project catalog | TBD | Monthly |</p>
-<p>| Payment/support links | TBD | Monthly and after provider changes |</p>
-<p>| Security instructions | TBD | Quarterly and after incidents |</p>
-<p>| Legal pages | Qualified reviewer TBD | Before publication and on material change |</p>
-<h2>Design direction</h2>
+<h2>Design principles</h2>
 <ul>
-<li>Background: deep obsidian <code>#07070a</code></li>
-<li>Primary accent: neon cyan <code>#00f0ff</code></li>
-<li>Secondary accent: violet <code>#7000ff</code></li>
-<li>Typography: Plus Jakarta Sans for headings, Inter for body copy</li>
-<li>Layout: asymmetrical hero, glass panels, generous negative space, progressive disclosure</li>
-<li>Motion: subtle reveal and hover movement; never make essential information depend on animation</li>
+<li><strong>Clarity before decoration.</strong> Motion and visual polish should reinforce the next step, never hide it.</li>
+<li><strong>Local destinations over dead ends.</strong> A link should resolve to a complete page or be removed.</li>
+<li><strong>Progressive disclosure.</strong> Show the essential decision first; place detail one step deeper.</li>
+<li><strong>Honest states.</strong> A prototype should look and read like a prototype.</li>
+<li><strong>Accessible by default.</strong> Keyboard access, readable contrast, reduced motion, and responsive layouts are product requirements.</li>
+<li><strong>Static-first portability.</strong> The public surface should remain fast, inspectable, and easy to host.</li>
 </ul>
-<h2>Contribution promise</h2>
-<p>A contribution is successful when it makes the next step clearer for a visitor or makes the site easier to maintain for another builder. Visual polish matters, but clarity, truthfulness, and accessibility matter more.</p></article></main><footer class="site-footer"><div class="wrap footer-grid"><div><a class="brand" href="index.html">FEDPROMPTLY</a><p>A place where people turn ideas into software.</p><p class="muted">Built in public. Designed for the next small step.</p></div><div><b>Contact</b><div class="footer-links"><a href="mailto:contact@fedpromptly.com">contact@fedpromptly.com</a><a href="mailto:support@fedpromptly.com">support@fedpromptly.com</a></div></div><div><b>Explore</b><div class="footer-links"><a href="docs.html">Docs hub</a><a href="projects.html">Projects</a><a href="community.html">Community</a><a href="support.html">Support</a></div></div></div><div class="wrap footer-bottom"><span>© 2026 FedPromptly</span><span><a href="SECURITY.html">Security</a> · <a href="CODE_OF_CONDUCT.html">Code of Conduct</a> · <a href="LICENSE.html">License</a></span></div></footer><script src="assets/js/app.js"></script></body></html>
+<h2>Contributing</h2>
+<p>Start with <a href="CONTRIBUTING.html">CONTRIBUTING</a>, then review the <a href="BUILD.html">Build and Test workflow</a>. For project submissions, use <a href="submit-project.html">Submit a project</a>. For problems, use the issue templates or contact the team through the <a href="contact.html">Contact page</a>.</p>
+<p>A good contribution makes the next step clearer for a visitor or makes the site easier to maintain for another builder. If a change does not do one of those things, make the scope smaller.</p>
+<h2>License and contact</h2>
+<p>Review the <a href="LICENSE.html">license</a>, <a href="SECURITY.html">security guidance</a>, and <a href="CODE_OF_CONDUCT.html">code of conduct</a> before contributing.</p>
+<p>For general questions: <a href="mailto:contact@fedpromptly.com">contact@fedpromptly.com</a><br />
+For support: <a href="mailto:support@fedpromptly.com">support@fedpromptly.com</a></p>
+<hr />
+<p><strong>FedPromptly</strong> · Built in public. Designed for the next small step.</p></article></main><footer class="site-footer"><div class="wrap footer-grid"><div><a class="brand" href="index.html">FEDPROMPTLY</a><p>A place where people turn ideas into software.</p></div><div><b>Explore</b><div class="footer-links"><a href="projects.html">Projects</a><a href="docs.html">Docs</a><a href="book.html">The Small Build</a></div></div><div><b>Support</b><div class="footer-links"><a href="support.html">Support hub</a><a href="support/subscription-options.html">Payment options</a></div></div></div></footer><script src="assets/js/app.js"></script></body></html>
